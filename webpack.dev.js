@@ -8,4 +8,11 @@ module.exports = merge(common, {
     static: "./dist",
     watchFiles: ["./src/template.html"],
   },
+  rules: [
+    {
+      test: /\.jsx?$/,
+      exclude: ["node_modules"],
+      use: ["babel-loader"],
+    },
+  ],
 });
