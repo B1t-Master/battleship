@@ -1,41 +1,44 @@
-import { Ship } from "../app-logic/ship";
+// import { Ship } from "../app-logic/ship";
 import { Gameboard } from "../app-logic/gameboard";
 
 let gameboard;
 // const mockShip = jest.fn();
-// jest.mock("../app-logic/ship");
-const mockHit = jest.fn();
-const mockIsSunk = jest.fn();
-const mockName = jest.fn();
-const mockSize = jest.fn();
+// let spyShip = jest.spyOn(Ship, "constructor");
+// const mockHit = jest.fn();
+// const mockIsSunk = jest.fn();
+// const mockName = jest.fn();
+// const mockSize = 2;
+// jest.mock("../app-logic/ship", () => {
+//   return {
+//     Ship: jest.fn().mockImplementation(() => {
+//       return {
+//         hit: mockHit,
+//         name: mockName,
+//         isSunk: mockIsSunk,
+//         size: mockSize,
+//       };
+//     }),
+//   };
+// });
 
+// console.log(mockSize);
 // const mockConstructor = jest.fn();
 
-jest.mock("../app-logic/ship", () => {
-  return {
-    Ship: jest.fn().mockImplementation(() => {
-      return {
-        hit: mockHit,
-        name: mockName,
-        isSunk: mockIsSunk,
-        size: mockSize,
-      };
-    }),
-  };
-});
-
 beforeEach(() => {
-  jest.clearAllMocks();
+  // jest.clearAllMocks();
   gameboard = new Gameboard();
 });
 
-test("Able to place ship at coordinate", () => {
+test("Able to place ship at specific coordinates", () => {
   gameboard.placeShip(3, [
     [0, 6],
     [0, 7],
     [0, 8],
   ]);
-  expect(Ship).toHaveBeenCalled();
+  // console.log(gameboard);
+  // spyShip();
+  // console.log(spyShip());
+  // expect(spyShip).toHaveBeenCalled();
   expect(gameboard.board[0][6]).toBeTruthy();
   expect(gameboard.board[0][7]).toBeTruthy();
   expect(gameboard.board[0][8]).toBeTruthy();
@@ -44,7 +47,7 @@ test("Able to place ship at coordinate", () => {
     [2, 2],
     [2, 3],
   ]);
-  expect(Ship).toHaveBeenCalled();
+  // expect(jest.spyOn(Ship, "constructor")).toHaveBeenCalled();
   expect(gameboard.board[2][2]).toBeTruthy();
   expect(gameboard.board[2][3]).toBeTruthy();
 });

@@ -25,22 +25,22 @@ class Ship {
   #assignShip() {
     switch (this.size) {
       case 2:
-        this.name = "destroyer";
-        break;
+        return "destroyer";
+      // break;
 
       case 3:
-        this.name = "submarine";
-        break;
+        return "submarine";
+      // break;
 
       case 4:
-        this.name = "battleship";
-        break;
+        return "battleship";
+      // break;
 
       case 5:
-        this.name = "carrier";
-        break;
+        return "carrier";
+      // break;
       default:
-        return (this.name = "cruiser");
+        return "cruiser";
     }
   }
 }
