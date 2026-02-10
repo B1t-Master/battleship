@@ -1,10 +1,16 @@
 class Ship {
+  // size = 0;
   constructor(size) {
     this.size = size;
-    this.hits = 0;
-    this.sunk = false;
     this.name = this.#assignShip();
   }
+
+  sunk = false;
+  hits = 0;
+
+  // getSize() {
+  //   return this.size;
+  // }
 
   hit() {
     this.hits += 1;
