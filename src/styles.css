@@ -1,0 +1,153 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  height: 100vh;
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+img {
+  width: 2rem;
+  height: auto;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.header {
+  margin-top: 2rem;
+  justify-content: center;
+  /* width: 50%; */
+  display: flex;
+  gap: 4rem;
+}
+
+.header p {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.game-zone {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gameboard-1,
+.gameboard-2 {
+  width: 20rem;
+  height: 20rem;
+  border: black 2px solid;
+}
+
+.gameboard-1 {
+  grid-area: gameboard-1;
+}
+
+.gameboard-2 {
+  grid-area: gameboard-2;
+}
+
+#place-ships {
+  grid-area: place-ships;
+}
+
+.computer {
+  text-align: center;
+  grid-area: computer;
+}
+
+.player {
+  text-align: center;
+
+  grid-area: player;
+}
+
+.boards {
+  /* justify-self: center; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, max-content));
+
+  grid-template-areas:
+    "player computer"
+    "gameboard-1 gameboard-2"
+    "place-ships .";
+
+  gap: 1.5rem;
+  /* margin-bottom: -2rem; */
+}

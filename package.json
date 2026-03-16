@@ -13,7 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/B1t-Master/webpack-template.git"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
