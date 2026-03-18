@@ -110,11 +110,19 @@ body {
 
 .gameboard-1,
 .gameboard-2 {
+  box-sizing: content-box;
+  display: flex;
+  flex-wrap: wrap;
   width: 20rem;
   height: 20rem;
   border: black 2px solid;
 }
-
+.cell {
+  border: black 2px solid;
+  box-sizing: border-box;
+  width: 10%;
+  height: 10%;
+}
 .gameboard-1 {
   grid-area: gameboard-1;
 }
