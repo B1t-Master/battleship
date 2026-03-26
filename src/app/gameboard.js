@@ -1,6 +1,6 @@
 import { Ship } from "./ship";
 class Gameboard {
-  constructor() {
+  constructor(name) {
     this.board = [
       new Array(10),
       new Array(10),
@@ -11,7 +11,9 @@ class Gameboard {
       new Array(10),
       new Array(10),
       new Array(10),
+      new Array(10),
     ];
+    this.name = name;
     this.shipyard = [];
     this.actualHits = 0;
     this.missedAttacks = 0;

@@ -122,6 +122,24 @@ body {
   box-sizing: border-box;
   width: 10%;
   height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ship {
+  /* margin: auto; */
+  /* margin-bottom: auto; */
+  width: 80%;
+  height: 80%;
+}
+.ship-unhit {
+  background-color: greenyellow;
+}
+.ship-hit {
+  background-color: red;
+}
+.unseen {
+  background-color: transparent;
 }
 .gameboard-1 {
   grid-area: gameboard-1;
@@ -135,12 +153,12 @@ body {
   grid-area: place-ships;
 }
 
-.computer {
+p.computer {
   text-align: center;
   grid-area: computer;
 }
 
-.player {
+p.player {
   text-align: center;
 
   grid-area: player;
