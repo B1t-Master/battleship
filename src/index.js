@@ -1,7 +1,7 @@
 import styles from "./styles.css";
-import renderLayout from "./app/UI/layout";
+
 import { Player } from "./app/player";
-import { drawBoard } from "./app/UI/layout";
+import { playGame } from "./app/playgame";
 
 let computer = new Player("computer");
 let player = new Player("player");
@@ -30,6 +30,8 @@ player.gameboard.placeShip(5, [
   [9, 6],
 ]);
 // console.log(player.gameboard);
-renderLayout(player, computer);
-drawBoard(computer.gameboard);
-drawBoard(player.gameboard);
+// playGame(player, computer);
+
+// let computerGameboard = document.querySelector(".gameboard-2");
+
+// computerGameboard.addEventListener("click", () => {});
