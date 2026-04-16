@@ -29,8 +29,14 @@ class Gameboard {
   }
 
   recieveAttack(coordinates) {
+    console.log(coordinates);
     let cell = this.board[coordinates[0]][coordinates[1]];
-    if (!cell) return this.missedAttacks++;
+    // console.log(cell);
+    console.log(coordinates);
+    if (!cell) {
+      this.missedAttacks++;
+      return (this.board[coordinates[0]][coordinates[1]] = "missed");
+    }
     const targetShip = this.#findShip(cell);
     console.log(targetShip);
     targetShip.hit();

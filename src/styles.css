@@ -138,6 +138,9 @@ body {
 .ship-hit {
   background-color: red;
 }
+.missed {
+  background-color: rgb(0, 229, 255);
+}
 .unseen {
   background-color: transparent;
 }
