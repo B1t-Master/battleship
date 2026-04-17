@@ -26,7 +26,7 @@ export function drawBoard(gameboard, intialRender = true) {
         shipIcon.classList.add("ship");
         let cell = document.getElementById(`${name}${i}${j}`);
         shipIcon.id = `${i}` + `${j}`;
-        console.log(shipIcon.id);
+        // console.log(shipIcon.id);
         cell.innerHTML = "";
         cell.appendChild(shipIcon);
         // console.log(cell.id);

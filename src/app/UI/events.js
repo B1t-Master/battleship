@@ -1,4 +1,4 @@
-import { computerTurn, playerTurn } from "../playgame";
+import { computerTurn, playerTurn, checkGameWinner } from "../playgame";
 import { player, computer, inValidChoices } from "../barrel";
 export default function addShipEvents() {
   let computerGameboard = document.querySelector(".gameboard-2");
@@ -19,7 +19,9 @@ export default function addShipEvents() {
     computerTurn(player, computer, inValidChoices);
   });
   computerGameboard.addEventListener("click", (e) => {
-    console.log(e.target);
     playerTurn(player, computer, e.target.id.slice(-2));
+  });
+  computerGameboard.addEventListener("click", () => {
+    checkGameWinner(player, computer);
   });
 }
