@@ -22,7 +22,7 @@
 }
 
 body {
-  height: 90vh;
+  height: 100%;
   /* 4. Add accessible line-height */
   line-height: 1.5;
   /* 5. Improve text rendering */
@@ -85,19 +85,21 @@ img {
 }
 
 body {
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   display: flex;
   margin-top: 4rem;
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
+  padding-bottom: 4rem;
 }
 
 .header {
-  margin-top: 2rem;
   justify-content: center;
   /* width: 50%; */
+  /* height: 4rem; */
+  /* box-sizing: border-box; */
   display: flex;
   gap: 4rem;
 }
@@ -108,6 +110,7 @@ body {
 }
 
 .game-zone {
+  /* margin-top: -5rem; */
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -191,6 +194,7 @@ p.player {
 }
 
 button {
+  height: auto;
   border-radius: 0.2rem;
   box-sizing: border-box;
   padding: 0.4rem;
@@ -198,7 +202,9 @@ button {
   cursor: pointer;
 }
 #restart {
+  position: absolute;
+  top: 3.5rem;
+  left: 56rem;
+  /* margin-left: 12rem; */
   width: fit-content;
-
-  margin-bottom: 6rem;
 }
