@@ -1,5 +1,7 @@
 # Battleship Project
 
+Project link[https://b1t-master.github.io/battleship/]
+
 ## Overview
 
 This project is an implementation of the classic Battleship game using JavaScript. The goal was to build the game logic first using classes, thoroughly test functionality, and then integrate a user interface driven by DOM interactions and most importantly to practice test-driven development (TDD).
