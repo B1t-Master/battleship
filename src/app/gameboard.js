@@ -16,12 +16,13 @@ class Gameboard {
     this.name = name;
     this.shipyard = [];
     this.actualHits = 0;
+
     this.missedAttacks = 0;
   }
 
   placeShip(shipSize, coordinates) {
     const ship = new Ship(shipSize);
-    console.log(ship);
+    // console.log(ship);
     this.shipyard.push(ship);
     coordinates.forEach((cell) => {
       this.board[cell[0]][cell[1]] = ship.name;
@@ -29,16 +30,16 @@ class Gameboard {
   }
 
   recieveAttack(coordinates) {
-    console.log(coordinates);
+    // console.log(coordinates);
     let cell = this.board[coordinates[0]][coordinates[1]];
     // console.log(cell);
-    console.log(coordinates);
+    // console.log(coordinates);
     if (!cell) {
       this.missedAttacks++;
       return (this.board[coordinates[0]][coordinates[1]] = "missed");
     }
     const targetShip = this.#findShip(cell);
-    console.log(targetShip);
+    // console.log(targetShip);
     targetShip.hit();
     targetShip.isSunk();
     // return (this.board[2][2] = "hit");
@@ -51,12 +52,11 @@ class Gameboard {
   }
 
   isGameOver() {
-    const totalHits = this.shipyard.reduce((acc, curr) => acc + curr.size, 0);
-    // console.log(totalHits);
-    // console.log(this.shipyard[0]);
-    // console.log(this.actualHits);
-
-    if (totalHits === this.actualHits) return true;
+    const requiredHits = this.shipyard.reduce(
+      (acc, curr) => acc + curr.size,
+      0,
+    );
+    if (requiredHits === this.actualHits) return true;
     else return false;
   }
 }

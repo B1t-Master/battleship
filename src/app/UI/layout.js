@@ -1,7 +1,8 @@
 import addShipEvents from "./events";
 
-function createCells(player) {
+export function createCells(player) {
   let virtualGameboard = document.getElementById(`${player.type}`);
+  virtualGameboard.innerHTML = "";
   let name = player.type;
   const board = player.gameboard.board;
   for (let i = 0; i < board.length; i++) {
@@ -26,10 +27,8 @@ export function drawBoard(gameboard, intialRender = true) {
         shipIcon.classList.add("ship");
         let cell = document.getElementById(`${name}${i}${j}`);
         shipIcon.id = `${i}` + `${j}`;
-        // console.log(shipIcon.id);
         cell.innerHTML = "";
         cell.appendChild(shipIcon);
-        // console.log(cell.id);
         if (gameboard[i][j] === "missed") {
           shipIcon.classList.remove("unseen");
           shipIcon.classList.add("missed");

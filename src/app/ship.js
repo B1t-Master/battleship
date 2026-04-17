@@ -8,10 +8,6 @@ class Ship {
   sunk = false;
   hits = 0;
 
-  // getSize() {
-  //   return this.size;
-  // }
-
   hit() {
     this.hits += 1;
     return this.hits;
