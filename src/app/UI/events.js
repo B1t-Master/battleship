@@ -13,22 +13,22 @@ function restartGame() {
     window.location.reload();
   });
 }
+const randomizeButton = document.querySelector("#place-ships");
 function randomizeShips() {
-  const randomizeButton = document.querySelector("#place-ships");
-
-  randomizeButton.addEventListener("click", () => {
-    player.gameboard = new Gameboard("player");
-    placeShipRandomly(player);
-    createCells(player);
-    drawBoard(player.gameboard);
-  });
+  player.gameboard = new Gameboard("player");
+  placeShipRandomly(player);
+  createCells(player);
+  drawBoard(player.gameboard);
 }
+
 export default function addEvents() {
   let computerGameboard = document.querySelector(".gameboard-2");
+  randomizeButton.addEventListener("click", randomizeShips);
   randomizeShips();
   restartGame();
   computerGameboard.addEventListener("click", () => {
     computerTurn(player, computer, inValidChoices);
+    randomizeButton.removeEventListener("click", randomizeShips);
   });
   computerGameboard.addEventListener("click", (e) => {
     if (
