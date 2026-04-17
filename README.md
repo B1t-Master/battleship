@@ -1,6 +1,6 @@
 # Battleship
 
-Live Demo ([https://b1t-master.github.io/battleship/])
+[Live Demo](https://b1t-master.github.io/battleship/)
 
 ## Overview
 
