@@ -31,6 +31,13 @@ export default function addEvents() {
     computerTurn(player, computer, inValidChoices);
   });
   computerGameboard.addEventListener("click", (e) => {
+    if (
+      e.target.classList.contains("ship-hit") ||
+      e.target.classList.contains("missed")
+    ) {
+      alert("you hit the same square, you'll let the enemy win");
+      return e.stopPropagation();
+    }
     playerTurn(player, computer, e.target.id.slice(-2));
   });
   computerGameboard.addEventListener("click", () => {

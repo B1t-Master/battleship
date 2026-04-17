@@ -22,7 +22,6 @@ class Gameboard {
 
   placeShip(shipSize, coordinates) {
     const ship = new Ship(shipSize);
-    // console.log(ship);
     this.shipyard.push(ship);
     coordinates.forEach((cell) => {
       this.board[cell[0]][cell[1]] = ship.name;
